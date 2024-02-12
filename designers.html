@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.topsection{
+    width: 100%;
+    height: 50px;
+    background-color: teal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.box1{
+    width: 100%;
+    height: auto;
+}
+.box2{
+    width: 100%;
+    height: auto;
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 50%;
+  height: 50%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+</head>
+<body>
+<div class="topsection" style="color: white; margin-left: 10px; margin-top: 20px;">
+<h1>Designers</h1>
+</div>
+<div class="containers">
+    <div class="box1">
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/4e/22/be/4e22beef6d94640c45a1b15f4a158b23.jpg" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text">John Doe <p> 7 years exp|Bangalore</p><br>
+              <p>75+ Projects Completed</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="box2">
+        <div class="container">
+            <img src="https://i.pinimg.com/564x/52/61/bd/5261bd492ef52666d60258a067239007.jpg" alt="Avatar" class="image">
+            <div class="middle">
+              <div class="text">Arathy <p> 5 years exp|Kochi</p><br>
+                  <p>50+ Projects Completed</p>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+
+  
+</body>
+</html>

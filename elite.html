@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navBar{
+            height: 100%;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+        .logo{
+            height: 40px;
+            width: 7%;
+            margin-top: 5px;
+            margin-left: 980px;
+        }
+        .livingroom1{
+            height: 100%;
+            width: 100%;
+        }
+        .topRight{
+            position: absolute;
+            top: 30%;
+            right: 550px;
+            color: white;
+        }
+        body,html{
+            height: 100%;
+        }
+        *{
+            box-sizing: border-box
+        }
+        .bg-img{
+            background-image: url("https://i.pinimg.com/564x/23/44/66/234466605a6b7f554c5caf6322e64eba.jpg");
+            min-height: 380px;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            filter: blur(3px);
+        }
+        .container{
+            padding: 16px;
+            right: 0;
+            position: absolute;
+            margin: 20px;
+            max-width: 400px;
+            background-color: rgba(248, 248, 248, 0.5);
+            box-shadow: 0 0 10px #000;
+        }
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        hr{
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+        .registerbtn{
+            background-color: teal;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+        .registerbtn:hover{
+            opacity: 1;
+        }
+        a{
+            color: dodgerblue;
+        }
+        .signin{
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        .navigator{
+            overflow: hidden;
+            background-color: teal;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navigator a{
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown{
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn{
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navigator a:hover, .dropdown:hover
+        .dropbtn{
+            background-color: black;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a{
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover{
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .pagination a{
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            margin-top: 10px;
+        }
+        .pagination a.active{
+            background-color: dodgerblue;
+            color: white;
+        }
+        .pagination a:hover:not(.active){
+            background-color: #ddd;
+        }
+        .carousel{
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+        }
+        .cards{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+        .cards::-webkit-scrollbar{
+            display: none;
+        }
+        .card{
+            height: 170px;
+            width: 250px;
+            border-radius: 15px;
+            background-image: url("https://i.pinimg.com/564x/aa/cf/68/aacf68be3d9a4309a502e2a8357e7534.jpg");
+            background-size: cover;
+            position: relative;
+        }
+        .contents{
+            position: absolute;
+            height: 30px;
+            width: 100%;
+            bottom: 10px;
+            background-color: blue;
+            color: white;
+            display: none;
+        }
+        .card:hover + .contents{
+            display: block;
+            color: white;
+        }
+        .seeall{
+        }
+        .seeall a{
+            text-decoration: none;
+            color: red;
+        }
+        .title{
+        }
+        .top{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }    
+    </style>
+</head>
+<body>
+        <div class="navigator">
+            <img src="https://i.pinimg.com/564x/f2/82/32/f282329825ef896ba4d31ea573fd96c2.jpg" class="logo">
+            <a href="#home">Home</a>
+            <a href="file:///C:/Users/ashli/OneDrive/Desktop/homelane/designers.html">Designers</a>
+            <div class="dropdown">
+                <button class="dropbtn">More
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="file:///C:/Users/ashli/OneDrive/Desktop/homelane/morekitchen.html">Kitchen Ideas</a>
+                    <a href="file:///C:/Users/ashli/OneDrive/Desktop/homelane/moreliving.html">Living Room Ideas</a>
+                    <a href="file:///C:/Users/ashli/OneDrive/Desktop/homelane/morebedroom.html">Bed Room Ideas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navBar">
+        <div class="topRight">
+            <h1>ELITE</h1>
+            <p>Meet the Future</p></div>
+            <form action="action_page.php">
+                <div class="container">
+                    <h1>Register</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                    <hr>
+
+                    <p>By creating an account you agree to our <a href="#">Terms & Conditions</a>.</p>
+                    <button type="submit" class="registerbtn">Register</button>
+                </div>
+            </form>
+        <img src="https://i.pinimg.com/564x/23/44/66/234466605a6b7f554c5caf6322e64eba.jpg" class="livingroom1">
+        </div>
+        <div class="carousel">
+            <div class="top">
+                <div class="title">
+                    <h3>Modular Kitchen Designs</h3>
+                </div>
+                <div class="seeall">
+                    <a href="">See all</a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/f1/30/b3/f130b367a99af40b0d81f208e7abbb2a.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/21/69/d4/2169d49746b913114de952bee6465f09.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/89/cf/99/89cf99d4e9e72a808e1d3d170e800bd9.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/8a/7b/41/8a7b41ce991d02e2087e38fcfaa0100e.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+            </div>
+
+            <div class="top">
+                <div class="title">
+                    <h3>Modular Living Room Designs</h3>
+                </div>
+                <div class="seeall">
+                    <a href="">See all</a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/4c/68/92/4c6892eb0b9f96e4f954cf7b84fb53a1.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/14/fa/cf/14facf2fcc4240f329f4d73223d80030.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/cb/24/f4/cb24f4fb67cd0bdf84cc7810433ab69b.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/5d/8e/58/5d8e58d9cd4698e561490e0678f5bd03.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/b1/e6/21/b1e62150aa6f73b938900d83dfc34b2d.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+            </div>
+
+            <div class="top">
+                <div class="title">
+                    <h3>Modular Bedroom Designs</h3>
+                </div>
+                <div class="seeall">
+                    <a href="">See all</a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/eb/4b/ac/eb4bac1ebf2b0dfc966ec23279b5b98a.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/0d/18/d2/0d18d22e9ef1aab7ab781c9fda536f3a.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/98/9c/36/989c362002a6a818fe0ed17d6edb7aa6.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/ee/ed/6c/eeed6cac621f434c955cfade4cb838e2.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/2c/4c/01/2c4c010fcced153d45586eb6ba81ff8b.jpg" style="width: 250px; height: 170px; border-radius: 15px; background-size: cover; position: relative;">
+                    <div class="contents"><p>hello</p></div>
+                </div>
+            </div>
+           
+        </div>
+        <script>
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelector('.cards');
+          
+            carousel.addEventListener('scroll', () => {
+              if (carousel.scrollLeft === 0) {
+                carousel.scrollLeft = cards.scrollWidth;
+              } else if (carousel.scrollLeft === cards.scrollWidth) {
+                carousel.scrollLeft = 0;
+              }
+            });
+          </script>
+</body>
+</html>
+
+
